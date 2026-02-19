@@ -1105,21 +1105,6 @@ def delete_video(video_id):
     
     return jsonify({'message': 'Video deleted successfully'})
 
-if __name__ == '__main__':
-    print("=" * 60)
-    print("Cloud Video Streaming Platform with Authentication")
-    print("=" * 60)
-    print("Server running at: http://localhost:5000")
-    print("Features:")
-    print("  + User Registration & Login")
-    print("  + Secure Password Hashing (bcrypt)")
-    print("  + Session Management")
-    print("  + Upload videos (drag & drop)")
-    print("  + Stream videos with adaptive playback")
-    print("  + User-specific video libraries")
-    print("  + Delete videos")
-    print("  + Storage statistics")
-    print("=" * 60)
-    print("\nFirst time? Create an account to get started!")
-    print("=" * 60)
-    app.run(debug=True, host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
